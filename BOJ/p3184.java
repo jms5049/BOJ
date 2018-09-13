@@ -35,3 +35,19 @@ public class p3184 {
         }
         
         
+
+                if(map[nx][ny] != '#' && visit[nx][ny] != 1) {
+                    
+                    if(map[nx][ny] == 'o') {
+                        countSheep++;
+                    }
+                    else if(map[nx][ny] == 'v') {
+                        countWolf++;
+                    }
+                    visit[nx][ny] = 1;
+                    q.add(new point(nx,ny));
+                }                
+            }
+        }
+    }
+}
