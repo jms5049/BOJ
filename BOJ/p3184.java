@@ -38,7 +38,28 @@ public class p3184 {
             for(int j = 0; j <C; j++) {
                 if(visit[i][j] == -1) {
                     bfs(i,j);
+                    count();
+                }
+            }
+        }
+        
+        System.out.println(totalSheep + " "+ totalWolf);
+        
 
+    }
+
+    private static void count() {
+        // TODO Auto-generated method stub
+        if(countSheep > countWolf) {
+            totalSheep += countSheep;
+        }
+        else {
+            totalWolf += countWolf;
+        }
+        
+        countWolf = 0;
+        countSheep = 0;
+    }
 
     private static void bfs(int i, int j) {
         
