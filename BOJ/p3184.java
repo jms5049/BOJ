@@ -34,7 +34,31 @@ public class p3184 {
             }
         }
         
+        for(int i = 0 ; i < R; i++) {
+            for(int j = 0; j <C; j++) {
+                if(visit[i][j] == -1) {
+                    bfs(i,j);
+
+
+    private static void bfs(int i, int j) {
         
+        q.add(new point(i,j));
+        visit[i][j] = 1;
+        
+        while(!q.isEmpty()) {
+            point temp = q.remove();
+            int x = temp.x;
+            int y = temp.y;
+            
+            for(int k = 0; k < 4; k++) {
+                int nx = x+dx[k];
+                int ny = y+dy[k];
+                
+                //유효범위
+                if(nx < 0 || ny < 0 || nx >= R || ny >= C)
+                    continue;
+                if(map[nx][ny] == '#')
+                    continue;
 
                 if(map[nx][ny] != '#' && visit[nx][ny] != 1) {
                     
