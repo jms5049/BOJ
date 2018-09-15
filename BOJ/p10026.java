@@ -33,5 +33,26 @@ public class p10026 {
                 visit[i][j] = 0;
             }
         }
+        for(int i = 0; i<N; i++) {
+            for(int j = 0; j<N; j++) {
+                if(visit[i][j] == 0 ) {
+                    bfs(i,j,0);
+                }
+            }            
+        }
         
+        init(visit);
         
+        for(int i = 0; i<N; i++) {
+            for(int j = 0; j<N; j++) {
+                if(visit[i][j] == 0 ) {
+                    bfs(i,j,1);
+                }
+            }
+        }
+        
+        System.out.println(nCount + " " + bCount);
+
+    }
+
+    
