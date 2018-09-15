@@ -55,4 +55,32 @@ public class p10026 {
 
     }
 
-    
+    private static void init(int[][] visit2) {
+        for(int i = 0; i<N ; i++) {
+            for(int j = 0; j<N; j++) {
+                visit[i][j] = 0;
+            }
+        }
+    }
+
+    private static void bfs(int i, int j, int flag) {
+        // TODO Auto-generated method stub
+        boolean isBlind = false;
+        int x = 0, y = 0;
+        
+        //색약 여부
+        if(flag == 0)
+            isBlind = false;
+        else
+            isBlind = true;
+        
+        Queue<point> q = new LinkedList<point>();
+        q.add(new point(i,j));
+        visit[i][j] = 1;
+        
+        
+        
+    }
+
+}
+        
