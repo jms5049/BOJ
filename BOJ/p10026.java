@@ -78,7 +78,49 @@ public class p10026 {
         q.add(new point(i,j));
         visit[i][j] = 1;
         
+        while(!q.isEmpty()) {
+            point temp = q.remove();
+            x = temp.x;
+            y = temp.y;
+            char color = map[x][y];
+            
+            for(int k = 0; k<4; k++) {
+                int nx = x + dx[k];
+                int ny = y + dy[k];
+                
+                //유효범위
+                if(nx<0 || nx>=N || ny<0 || ny>=N)
+                    continue;
+                
+                //체크
+                if(!isBlind) {
+                    if(color == map[nx][ny] && visit[nx][ny] != 1) {
+                        q.add(new point(nx,ny));
+                        visit[nx][ny] = 1;
+                    }
+                }
+                else {
+                    if(color == 'R' || color == 'G') {
+                        if((map[nx][ny] == 'R' || map[nx][ny] == 'G') && visit[nx][ny] != 1) {
+                            q.add(new point(nx,ny));
+                            visit[nx][ny] = 1;
+                        }
+                    }
+                    else {
+                        if(color == map[nx][ny] && visit[nx][ny] != 1) {
+                            q.add(new point(nx,ny));
+                            visit[nx][ny] = 1;
+                        }
+                    }
+                    
+                }
+            }
+        }
         
+        if(isBlind)
+            bCount++;
+        else
+            nCount++;
         
     }
 
