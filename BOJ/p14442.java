@@ -45,4 +45,15 @@ public class p14442 {
         
     }
 
-    
+    private static void bfs() {
+        q.add(new point(0,0,0,1));
+        visit[0][0] = 1;
+        int x = 0, y = 0, bCount = 0, dist = 0;
+        while(!q.isEmpty()) {
+            point temp = q.remove();
+            x = temp.x;
+            y = temp.y;
+            bCount = temp.count;
+            dist = temp.dist;
+            
+            
