@@ -56,4 +56,41 @@ public class p14442 {
             bCount = temp.count;
             dist = temp.dist;
             
+            if(x==N-1 && y == M-1) {
+                System.out.println(dist);
+                return;
+            }
             
+            for(int i = 0; i < 4 ; i++) {
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+                
+                
+                if(isRange(nx,ny) && visit[nx][ny] != 1) {
+                    
+                    if(map[nx][ny] == 1) {
+                        if(bCount+1 <= K) {
+                            map[nx][ny] = 0;
+                            bCount++;
+                            q.add(new point(nx,ny,bCount,dist+1));
+                            visit[nx][ny] = 1;
+                        }
+                        else
+                            continue;
+                    }
+                    
+                    else{
+                        q.add(new point(nx,ny,bCount,dist+1));
+                        visit[nx][ny] = 1;
+                    }
+                }
+            }
+        }
+        System.out.println(-1);
+    }
+
+    private static boolean isRange(int nx, int ny) {
+        return (nx >= 0 && nx < N) && (ny >= 0 && ny < M);
+    }
+
+}
