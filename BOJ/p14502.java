@@ -50,4 +50,25 @@ public class p14502 {
 
     }
 
+    private static void dfs(int k) {
+        
+        if(k == 3) {
+            spread();
+            calculate(copy);
+            
+            return;
+        }
+        for(int i = 0; i < N; i++) {
+            for(int j = 0; j < M; j++) {
+                if(map[i][j] == 0) {
+                    map[i][j] = 1;
+                    dfs(k+1);
+                    map[i][j] = 0;
+                }
+                    
+            }
+        }
+        
+    }
+
     
