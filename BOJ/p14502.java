@@ -71,4 +71,21 @@ public class p14502 {
         
     }
 
+    private static void calculate(int[][] copy) {
+        int max = 0;
+        
+        for(int i = 0; i < N; i++) {
+            for(int j = 0; j < M; j++) {
+                if(copy[i][j] == 0)
+                    max++;
+            }
+        }
+        
+        if(max > answer)
+            answer = max;
+    }
+
+    
+
+
     
