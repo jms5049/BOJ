@@ -85,7 +85,40 @@ public class p14502 {
             answer = max;
     }
 
-    
+    private static void spread() {
+        
+        Queue<virus> q = new LinkedList<virus>();
+        
+        for(int i = 0; i < N; i++) {
+            for(int j = 0; j < M; j++) {
+                copy[i][j] = map[i][j];
+                if(copy[i][j] == 2)
+                    q.add(new virus(i,j));
+            }
+        }
+        
+        while(!q.isEmpty()) {
+            
+            virus temp = q.remove();
+            int x = temp.x;
+            int y = temp.y;
+            
+            for(int k = 0; k < 4 ; k++) {
+                int nx = x + dx[k];
+                int ny = y + dy[k];
+                
+                if(nx < 0 || nx >= N || ny < 0 || ny >= M || copy[nx][ny] == 1) 
+                    continue;
+                
+                if(copy[nx][ny] == 0) {
+                    copy[nx][ny] = 2;
+                    q.add(new virus(nx,ny));
+                }
+            }
+        }
+    }
+
+}
 
 
     
