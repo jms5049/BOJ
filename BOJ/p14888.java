@@ -49,6 +49,19 @@ public class p14888 {
             dfs(plus - 1, minus, mult, div, depth + 1, temp);
         }
 
+        //minus
+        if (minus > 0)
+        {
+            int temp = 0;
+            temp = sum - numbers[depth];
+
+            dfs(plus, minus - 1, mult, div, depth + 1, temp);
+
+        }
+
         
+               
+        
+    }
 
 }
