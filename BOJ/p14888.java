@@ -29,4 +29,26 @@ public class p14888 {
         System.out.println(MIN);
     }
 
-    
+    private static void dfs(int plus,int minus, int mult, int div, int depth, int sum) {
+        // TODO Auto-generated method stub
+        
+        if(depth == N) {
+            if(sum > MAX)
+                MAX = sum;
+            if(sum < MIN)
+                MIN = sum;
+            return;
+        }
+        
+      //plus
+        if (plus > 0)           
+        {
+            int temp = 0;
+            temp = sum + numbers[depth];
+
+            dfs(plus - 1, minus, mult, div, depth + 1, temp);
+        }
+
+        
+
+}
