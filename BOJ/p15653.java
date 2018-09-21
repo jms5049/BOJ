@@ -32,5 +32,23 @@ public class p15653 {
         //빨간구슬 구멍
         //파란구슬 구멍 x
         //방법 x -> -1
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();   //세로
+        M = sc.nextInt();   //가로
+        int rx = 0,ry = 0,bx = 0,by = 0; //,hx = 0,hy = 0; // r = 빨간구슬 / b = 파란구슬 / h = 구멍
         
+        //보드 초기화
+        board = new char[N][M];
+        check = new int[N][M][N][M];
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<M; j++) {
+                for (int k=0; k<N; k++) {
+                    Arrays.fill(check[i][j][k],-1);
+                }
+            }
+        }
+        
+        
+}
+
         
