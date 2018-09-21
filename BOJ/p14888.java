@@ -59,7 +59,23 @@ public class p14888 {
 
         }
 
-        
+        //mult
+        if (mult > 0)
+        {
+            int temp = 0;
+            temp = sum * numbers[depth];
+
+            dfs(plus, minus, mult - 1, div, depth + 1, temp);
+        }
+
+        //div
+        if (div > 0)
+        {
+            int temp = 0;
+            temp = sum / numbers[depth];
+
+            dfs(plus, minus, mult, div - 1, depth + 1, temp);
+        }
                
         
     }
