@@ -48,7 +48,37 @@ public class p15653 {
             }
         }
         
+        for(int i = 0 ; i < N; i++) {
+            String temp = sc.next();
+            for(int j = 0; j <M; j++) {
+                board[i][j] = temp.charAt(j);
+//                if(temp.charAt(j)=='0') {
+//                    hx = j;
+//                    hy = i;
+//                }
+                if(temp.charAt(j)=='R') {
+                    rx = i;
+                    ry = j;
+                    board[i][j] = '.';
+                }
+                if(temp.charAt(j)=='B') {
+                    bx = i;
+                    by = j;
+                    board[i][j] = '.';
+                }
+                    
+            }
+        }
         
+        
+        
+        System.out.println(answer);
+        
+        
+        
+
+    }
+
 }
 
         
