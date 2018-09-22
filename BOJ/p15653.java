@@ -70,7 +70,41 @@ public class p15653 {
             }
         }
         
-        
+        Queue<pair> queue = new LinkedList<pair>();
+        queue.add(new pair(new dot(rx,ry),new dot(bx,by)));
+        boolean found = false;
+        int answer = -1;
+        while(!queue.isEmpty()) {
+            pair temp = queue.remove();
+            dot red = temp.red;
+            dot blue = temp.blue;
+            check[red.x][red.y][blue.x][blue.y] = 0;
+            
+            for(int k = 0; k < 4; k++) {
+                int nrx = red.x + dx[k];
+                int nry = red.y + dy[k];
+                int nbx = blue.x + dx[k];
+                int nby = blue.y + dy[k];
+                
+                //범위 밖이면
+                if(nrx < 0 || nry < 0 || nbx < 0 || nby < 0)
+                    continue;
+//                if(nrx >= N || nbx >= N || nry >= M || nby >= M)
+//                    continue;
+                
+                
+                if(board[nrx][nry] == '#') {
+                    nrx = red.x;
+                    nry = red.y;
+                }
+                
+                if(board[nbx][nby] == '#') {
+                    nbx = blue.x;
+                    nby = blue.y;
+                }
+                
+                
+               
         
         System.out.println(answer);
         
