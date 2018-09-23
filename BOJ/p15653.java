@@ -104,11 +104,32 @@ public class p15653 {
                 }
                 
                 
-               
+                //이미 방문?
+                if(check[nrx][nry][nbx][nby] != -1)
+                    continue;
+                //같은 위치?
+                if(nrx == nbx && nry == nby)
+                    continue;
+                
+                //파랑이 구멍으로 나가면 망
+                if(board[nbx][nby] == 'O')
+                    continue;
+                else
+                    if(board[nrx][nry] == 'O') {
+                        found = true;
+                        answer = check[red.x][red.y][blue.x][blue.y] + 1;
+                        break;
+                    }
+                
+                check[nrx][nry][nbx][nby] = check[red.x][red.y][blue.x][blue.y] + 1;
+                queue.add(new pair(new dot(nrx,nry),new dot(nbx,nby)));
+                
+            }
+            if(found)
+                break;
+        }
         
         System.out.println(answer);
-        
-        
         
 
     }
