@@ -20,5 +20,30 @@ public class p15686 {
     
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        map = new int[N][N];
         
+        for(int i = 0; i < N ; i++) {
+            for(int j = 0; j < N; j++) {
+                map[i][j] = sc.nextInt();
+                if(map[i][j] == 1) {
+                    //전체 집 등록
+                    house.add(new point(i,j));
+                }
+                
+                if(map[i][j] == 2) {
+                    //전체 치킨집 등록
+                    chicken.add(new point(i,j));
+                }
+            }
+        }
+        
+        combination(0,0);
+        System.out.println(answer);
+
+    }
+    
+   
         
