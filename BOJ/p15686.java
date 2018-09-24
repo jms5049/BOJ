@@ -44,6 +44,36 @@ public class p15686 {
         System.out.println(answer);
 
     }
+
+    public static void combination(int i, int len) {
+        if (len <= M)
+            cal(temp);
+        if (i == chicken.size() || len > M)
+            return;
+        
+        temp.add(chicken.get(i));
+        combination(i + 1, len + 1);
+        temp.remove(temp.size()-1);
+        combination(i + 1, len);
+        
+    }
+
+    private static void cal(ArrayList<point> a) {
+        if(a.size() == 0)
+            return;
+        int sum = 0;
+        for(point temp : house) {
+            int min = Integer.MAX_VALUE;
+            for(point tempChicken : a) {
+                min = Math.min(min, (Math.abs(temp.x - tempChicken.x) + Math.abs(temp.y- tempChicken.y)));
+            }
+            sum+=min;
+        }
+        answer = Math.min(answer,sum);
+    }
+
+}
+        
     
    
         
